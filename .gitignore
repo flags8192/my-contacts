@@ -6,8 +6,8 @@
 ### dotenv ###
 .env
 .idea
-.crcf.config.js
-src/backend/keys/**
+public.key
+private.key
 src/backend/uploaded/images/**
 deploy.sh
 
