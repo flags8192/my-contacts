@@ -7,7 +7,7 @@ const fs = require('fs-extra')
 const auth = require('../middleware/auth.middleware')
 
 const uploadImage = async (files, data) => {
-  if (files.avatars !== null) {
+  if (files.avatars != null) {
     const fileExtension = files.avatars.name.split('.').pop()
     data.avatars = `${data.id}.${fileExtension}`
     const newPath =

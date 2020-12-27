@@ -45,7 +45,7 @@ class Profile extends Component {
   }
 
   showPreviewImage = (values) => {
-    return values.file_obj !== null ? values.file_obj : avatarImage
+    return values.file_obj != null ? values.file_obj : avatarImage
   }
 
   getData = async (id) => {
@@ -90,7 +90,6 @@ class Profile extends Component {
     touched,
     handleChange,
     handleSubmit,
-    onSubmit,
     isSubmitting,
     setFieldValue,
   }) => {

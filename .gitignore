@@ -10,6 +10,7 @@ public.key
 private.key
 src/backend/uploaded/images/**
 deploy.sh
+yarn.lock
 
 
 ### macOS ###

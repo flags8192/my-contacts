@@ -40,7 +40,7 @@ class EditContact extends Component {
   }
 
   showPreviewImage = (values) => {
-    return values.file_obj !== null ? values.file_obj : this.state.avatarImage
+    return values.file_obj != null ? values.file_obj : this.state.avatarImage
   }
 
   getData = async (id) => {
@@ -91,7 +91,6 @@ class EditContact extends Component {
     touched,
     handleChange,
     handleSubmit,
-    onSubmit,
     isSubmitting,
     setFieldValue,
   }) => {

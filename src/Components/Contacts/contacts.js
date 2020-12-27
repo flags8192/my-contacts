@@ -123,7 +123,7 @@ const Contacts = () => {
     },
     textLabels: {
       body: {
-        noMatch: 'Извините, подходящих записей не найдено',
+        noMatch: 'Извините, контактов не найдено',
         toolTip: 'Сортировка',
         columnHeaderTooltip: column => `Сортировать по ${column.label}`
       },
