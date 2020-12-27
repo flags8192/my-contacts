@@ -54,7 +54,7 @@ class Profile extends Component {
       await get('/api/profile/id/' + id).then((response) => {
         if (response.data.avatars) {
           avatarImage =
-            'http://localhost:5000/images/' +
+            'http://127.0.0.1:5000/images/' +
             response.data._id +
             '/' +
             response.data.avatars

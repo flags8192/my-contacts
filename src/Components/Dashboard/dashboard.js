@@ -77,7 +77,7 @@ export default function Dashboard() {
     if (ready) {
       userData.avatars
         ? setAvatarImage(
-        'http://localhost:5000/images/' +
+        'http://127.0.0.1:5000/images/' +
         userData._id +
         '/' +
         userData.avatars

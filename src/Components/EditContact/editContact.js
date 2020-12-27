@@ -49,7 +49,7 @@ class EditContact extends Component {
       await get('/api/contacts/' + id).then((response) => {
         if (response.data.avatars) {
           this.setState({
-            avatarImage: 'http://localhost:5000/images/' +
+            avatarImage: 'http://127.0.0.1:5000/images/' +
               response.data._id +
               '/' +
               response.data.avatars

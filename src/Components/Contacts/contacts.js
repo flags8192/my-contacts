@@ -55,7 +55,7 @@ const Contacts = () => {
           customBodyRender: (value, tableMeta) => {
             return (
               value
-                ? <Avatar src={'http://localhost:5000/images/' + tableMeta.rowData[0] + '/' + tableMeta.rowData[2]}/>
+                ? <Avatar src={'http://127.0.0.1:5000/images/' + tableMeta.rowData[0] + '/' + tableMeta.rowData[2]}/>
                 :
                 <Avatar>{tableMeta.rowData[3].slice(0, 1).toUpperCase()}{tableMeta.rowData[4].slice(0, 1).toUpperCase()}</Avatar>
             )
