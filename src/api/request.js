@@ -3,7 +3,7 @@ import swal from 'sweetalert'
 
 function request(method, url, parameters, data) {
   let axios_config = {
-    baseURL: 'http://localhost:5000/',
+    baseURL: 'http://127.0.0.1:5000/',
     method,
     url,
     headers: {
