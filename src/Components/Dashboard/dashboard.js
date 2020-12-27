@@ -116,7 +116,16 @@ export default function Dashboard() {
             {`Мои контакты `}
             <Chip label={version}/>
           </Typography>
-          <div>
+          <div className={classes.appBarUser}>
+            <Typography
+              component="h1"
+              variant="h6"
+              color="inherit"
+              noWrap
+              className={classes.user}
+            >
+              {ready ? userData.firstName + ' ' + userData.lastName : ''}
+            </Typography>
             <IconButton
               aria-label="account of current user"
               aria-controls="menu-appbar"

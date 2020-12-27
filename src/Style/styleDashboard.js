@@ -23,6 +23,12 @@ export const useStylesDashboard = makeStyles((theme) => ({
       duration: theme.transitions.duration.leavingScreen,
     }),
   },
+  appBarUser: {
+    display: 'flex',
+  },
+  user: {
+    alignSelf: 'center',
+  },
   appBarShift: {
     marginLeft: drawerWidth,
     width: `calc(100% - ${drawerWidth}px)`,
