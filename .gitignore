@@ -7,8 +7,7 @@
 .env
 .idea
 .crcf.config.js
-public.key
-private.key
+src/backend/keys/**
 src/backend/uploaded/images/**
 deploy.sh
 
