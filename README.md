@@ -38,10 +38,10 @@ The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
 ## Screenshots
-![Login screen](https://res.cloudinary.com/eaglight/image/upload/v1609004243/screenshots/login.png)
-![Login screen](https://res.cloudinary.com/eaglight/image/upload/v1609004244/screenshots/register.png)
-![Login screen](https://res.cloudinary.com/eaglight/image/upload/v1609004243/screenshots/home.png)
-![Login screen](https://res.cloudinary.com/eaglight/image/upload/v1609004243/screenshots/profile.png)
-![Login screen](https://res.cloudinary.com/eaglight/image/upload/v1609004243/screenshots/contacts.png)
-![Login screen](https://res.cloudinary.com/eaglight/image/upload/v1609004243/screenshots/editcontact.png)
-![Login screen](https://res.cloudinary.com/eaglight/image/upload/v1609004243/screenshots/addcontact.png)
+![Login](screenshots/login.png)
+![Register](screenshots/register.png)
+![Home](screenshots/home.png)
+![Profile](screenshots/profile.png)
+![Contacts](screenshots/contacts.png)
+![EditContact](screenshots/editcontact.png)
+![AddContact](screenshots/addcontact.png)
