@@ -16,15 +16,11 @@ function request(method, url, parameters, data) {
   }
 
   if (data) {
-    // `data` allows changes to the request data before it is sent to the server
-    // This is only applicable for request methods 'PUT', 'POST', and 'PATCH'
     axios_config.data = data
   }
 
-  // intercept responses before they are handled by then or catch
   axios.interceptors.response.use(
     (response) => {
-      // console.log('api request.js response: ', response)
       return response
     },
     (error) => {
@@ -46,7 +42,6 @@ function request(method, url, parameters, data) {
           window.location = '/login'
         })
       }
-      // console.log('Error', error.response.status)
       return Promise.reject(error)
     }
   )

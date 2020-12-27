@@ -7,7 +7,6 @@ const router = Router()
 // /api/auth/register
 router.post('/register', async (request, response) => {
   try {
-    // console.log(req.body)
     request.body.password = await bcrypt.hash(request.body.password, 8)
     await Users.create(request.body)
     response.json({result: 'success', message: 'Регистрация успешна'})

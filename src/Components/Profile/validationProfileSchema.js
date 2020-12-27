@@ -28,7 +28,7 @@ export const validationProfileSchema = Yup.object().shape({
     .min(10, 'Минимум 10 цифр!')
     .required('Введите номер телефона'),
   address: Yup.string()
-    .min(12, 'Наименование места работы слишком короткое!')
+    .min(5, 'Наименование места работы слишком короткое!')
     .max(50, 'Наименование места работы слишком длинное!')
     .required('Введите наименование места работы'),
   email: Yup.string().email('Некорректный email').required('Введите email'),

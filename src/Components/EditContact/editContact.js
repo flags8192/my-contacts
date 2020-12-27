@@ -289,55 +289,55 @@ class EditContact extends Component {
     let loading = this.state.loading
 
     return loading ? <Loading/> : (<Grid container component="main" className={classes.root}>
-          <CssBaseline/>
-          <Grid item xs={12} lg={8} sm={12} md={6} className={classes.grid}>
-            <Card className={classes.cardEdit}>
-              <CardHeader
-                className={classes.cardEditHeader}
-                title="Редактирование контакта"
-              />
-              <CardContent>
-                <Formik
-                  enableReinitialize={true}
-                  initialValues={
-                    result
-                      ? result
-                      : {
-                        id: '',
-                        email: '',
-                        firstName: '',
-                        lastName: '',
-                        jobName: '',
-                        notes: '',
-                        phone: '',
-                        address: '',
-                        avatars: '',
-                      }
+      <CssBaseline/>
+      <Grid item xs={12} lg={8} sm={12} md={6} className={classes.grid}>
+        <Card className={classes.cardEdit}>
+          <CardHeader
+            className={classes.cardEditHeader}
+            title="Редактирование контакта"
+          />
+          <CardContent>
+            <Formik
+              enableReinitialize={true}
+              initialValues={
+                result
+                  ? result
+                  : {
+                    id: '',
+                    email: '',
+                    firstName: '',
+                    lastName: '',
+                    jobName: '',
+                    notes: '',
+                    phone: '',
+                    address: '',
+                    avatars: '',
                   }
-                  onSubmit={async (values, {setSubmitting}) => {
-                    let formData = new FormData()
-                    formData.append('id', values._id)
-                    formData.append('firstName', values.firstName)
-                    formData.append('lastName', values.lastName)
-                    formData.append('phone', values.phone)
-                    formData.append('address', values.address)
-                    formData.append('email', values.email)
-                    formData.append('jobName', values.jobName)
-                    formData.append('notes', values.notes)
-                    if (values.avatars) {
-                      formData.append('avatars', values.avatars)
-                    }
-                    await this.submitForm(formData, this.props.history)
-                    setSubmitting(false)
-                  }}
-                  validationSchema={validationEditContactSchema}
-                >
-                  {(properties) => this.showForm(properties)}
-                </Formik>
-              </CardContent>
-            </Card>
-          </Grid>
-        </Grid>);
+              }
+              onSubmit={async (values, {setSubmitting}) => {
+                let formData = new FormData()
+                formData.append('id', values._id)
+                formData.append('firstName', values.firstName)
+                formData.append('lastName', values.lastName)
+                formData.append('phone', values.phone)
+                formData.append('address', values.address)
+                formData.append('email', values.email)
+                formData.append('jobName', values.jobName)
+                formData.append('notes', values.notes)
+                if (values.avatars) {
+                  formData.append('avatars', values.avatars)
+                }
+                await this.submitForm(formData, this.props.history)
+                setSubmitting(false)
+              }}
+              validationSchema={validationEditContactSchema}
+            >
+              {(properties) => this.showForm(properties)}
+            </Formik>
+          </CardContent>
+        </Card>
+      </Grid>
+    </Grid>)
   }
 }
 

@@ -205,39 +205,39 @@ class AddContact extends Component {
     let loading = this.state.loading
 
     return loading ? <Loading/> : (<Grid container component="main" className={classes.root}>
-          <CssBaseline/>
-          <Grid item xs={12} lg={8} sm={12} md={6} className={classes.grid}>
-            <Card className={classes.cardEdit}>
-              <CardHeader
-                className={classes.cardEditHeader}
-                title="Добавление контакта"
-              />
-              <CardContent>
-                <Formik
-                  initialValues={{
-                    id: '',
-                    email: '',
-                    firstName: '',
-                    lastName: '',
-                    jobName: '',
-                    notes: '',
-                    phone: '',
-                    address: '',
-                    avatars: '',
-                  }
-                  }
-                  onSubmit={async (values, {setSubmitting}) => {
-                    await this.submitForm(values, this.props.history)
-                    setSubmitting(false)
-                  }}
-                  validationSchema={validationAddContactSchema}
-                >
-                  {(properties) => this.showForm(properties)}
-                </Formik>
-              </CardContent>
-            </Card>
-          </Grid>
-        </Grid>);
+      <CssBaseline/>
+      <Grid item xs={12} lg={8} sm={12} md={6} className={classes.grid}>
+        <Card className={classes.cardEdit}>
+          <CardHeader
+            className={classes.cardEditHeader}
+            title="Добавление контакта"
+          />
+          <CardContent>
+            <Formik
+              initialValues={{
+                id: '',
+                email: '',
+                firstName: '',
+                lastName: '',
+                jobName: '',
+                notes: '',
+                phone: '',
+                address: '',
+                avatars: '',
+              }
+              }
+              onSubmit={async (values, {setSubmitting}) => {
+                await this.submitForm(values, this.props.history)
+                setSubmitting(false)
+              }}
+              validationSchema={validationAddContactSchema}
+            >
+              {(properties) => this.showForm(properties)}
+            </Formik>
+          </CardContent>
+        </Card>
+      </Grid>
+    </Grid>)
   }
 }
 

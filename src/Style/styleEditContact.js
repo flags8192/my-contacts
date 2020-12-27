@@ -38,14 +38,6 @@ export const StylesEditContact = (theme) => ({
   author: {
     marginTop: '-77px',
   },
-  // image: {
-  //   backgroundImage: `url(${Logo})`,
-  //   backgroundRepeat: 'no-repeat',
-  //   backgroundColor:
-  //     theme.palette.type === 'light' ? theme.palette.grey[50] : theme.palette.grey[900],
-  //   backgroundPosition: 'center',
-  //   backgroundSize: '95%',
-  // },
   paper: {
     margin: theme.spacing(8, 4),
     display: 'flex',
