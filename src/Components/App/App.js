@@ -16,18 +16,18 @@ const isLoggedIn = () => {
   return localStorage.getItem('TOKEN_KEY') !== null
 }
 
-const SecuredRoute = ({component: Component, ...rest}) => (
-  <Route
-    {...rest}
-    render={(properties) =>
-      isLoggedIn() === true ? (
-        <Component {...properties} />
-      ) : (
-        <Redirect to='/login'/>
-      )
-    }
-  />
-)
+const SecuredRoute = ({component: Component}) => {
+  return (
+    <Route
+      render={properties => {
+        if (!isLoggedIn()) {
+          return <Redirect to="/login"/>
+        }
+        return <Component {...properties} />
+      }}
+    />
+  )
+}
 
 function App() {
   return (
