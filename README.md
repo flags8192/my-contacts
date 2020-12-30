@@ -25,8 +25,8 @@ audience = "https://listratenkov.com"
 MONGODB_URI = "mongodb://server.flags8192.local/my-contacts"
 ````
 
-Type `yarn install` inside the root directory ( Download Front-end Dependencies )\
-Type `yarn install` inside `src\backend` server directory ( Download Server Dependencies )
+Type `npm install` inside the root directory ( Download Front-end Dependencies )\
+Type `npm install` inside `src\backend` server directory ( Download Server Dependencies )
 
 ####To runs the app in the development mode, in the project directory, you can run:
 
