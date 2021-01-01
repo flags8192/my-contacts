@@ -21,8 +21,8 @@ import Logo from '../../Images/logo.png'
 import userAvatarDefault from '../../Images/user.png'
 import {StylesProfile} from '../../Style/styleProfile'
 import {parseJwt} from '../../utils/utils'
+import {validationContactSchema} from '../../ValidateForm/validationSchema'
 import Loading from '../Loading'
-import {validationProfileSchema} from './validationProfileSchema'
 
 let avatarImage = userAvatarDefault
 
@@ -358,7 +358,7 @@ class Profile extends Component {
                 await this.submitForm(formData, this.props.history)
                 setSubmitting(false)
               }}
-              validationSchema={validationProfileSchema}
+              validationSchema={validationContactSchema}
             >
               {(properties) => this.showForm(properties)}
             </Formik>

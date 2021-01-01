@@ -11,10 +11,10 @@ import TextField from '@material-ui/core/TextField'
 import {Formik} from 'formik'
 import React, {Component} from 'react'
 import swal from 'sweetalert'
-import {post} from '../../api/request'
-import {StylesAddContact} from '../../Style/styleAddContact'
-import Loading from '../Loading'
-import {validationAddContactSchema} from './validationAddContactSchema'
+import {post} from '../../../api/request'
+import {StylesAddContact} from '../../../Style/styleAddContact'
+import {validationContactSchema} from '../../../ValidateForm/validationSchema'
+import Loading from '../../Loading'
 
 class AddContact extends Component {
   constructor(properties) {
@@ -230,7 +230,7 @@ class AddContact extends Component {
                 await this.submitForm(values, this.props.history)
                 setSubmitting(false)
               }}
-              validationSchema={validationAddContactSchema}
+              validationSchema={validationContactSchema}
             >
               {(properties) => this.showForm(properties)}
             </Formik>

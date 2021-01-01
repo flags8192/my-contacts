@@ -14,11 +14,11 @@ import TextField from '@material-ui/core/TextField'
 import {Formik} from 'formik'
 import React, {Component} from 'react'
 import swal from 'sweetalert'
-import {get, put} from '../../api/request'
-import userAvatarDefault from '../../Images/user.png'
-import {StylesEditContact} from '../../Style/styleEditContact'
-import Loading from '../Loading'
-import {validationEditContactSchema} from './validationEditContactSchema'
+import {get, put} from '../../../api/request'
+import userAvatarDefault from '../../../Images/user.png'
+import {StylesEditContact} from '../../../Style/styleEditContact'
+import {validationContactSchema} from '../../../ValidateForm/validationSchema'
+import Loading from '../../Loading'
 
 class EditContact extends Component {
   constructor(properties) {
@@ -116,7 +116,7 @@ class EditContact extends Component {
               }}
               name="avatars"
               value=""
-              inputProps={{accept: 'image/*'}}
+              inputProps={{accept: ['image/jpg', 'image/jpeg', 'image/png', 'image/gif']}}
               id="avatars"
               error={errors.avatars}
             />
@@ -155,7 +155,6 @@ class EditContact extends Component {
               autoFocus
               onChange={handleChange}
               value={values.email}
-              // type='email'
               className={
                 errors.email && touched.email
                   ? 'form-control is-invalid'
@@ -214,7 +213,9 @@ class EditContact extends Component {
               onChange={handleChange}
               value={values.phone}
               error={!!(errors.phone && touched.phone)}
-              helperText={errors.phone && touched.phone ? errors.phone : null}
+              helperText={
+                errors.phone && touched.phone ? errors.phone : null
+              }
             />
             <TextField
               variant="outlined"
@@ -330,7 +331,7 @@ class EditContact extends Component {
                 await this.submitForm(formData, this.props.history)
                 setSubmitting(false)
               }}
-              validationSchema={validationEditContactSchema}
+              validationSchema={validationContactSchema}
             >
               {(properties) => this.showForm(properties)}
             </Formik>

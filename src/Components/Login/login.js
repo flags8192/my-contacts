@@ -10,9 +10,9 @@ import React, {Component} from 'react'
 import swal from 'sweetalert'
 import {post} from '../../api/request'
 import {StylesLoginRegister} from '../../Style/styleLoginRegister'
+import {validationLoginSchema} from '../../ValidateForm/validationSchema'
 import {version} from '../App/App'
 import {Form} from './form'
-import {validationLoginSchema} from './validationLoginSchema'
 
 class Login extends Component {
   componentDidMount() {

@@ -10,9 +10,9 @@ import React, {Component} from 'react'
 import swal from 'sweetalert'
 import {post} from '../../api/request'
 import {StylesLoginRegister} from '../../Style/styleLoginRegister'
+import {validationRegisterSchema} from '../../ValidateForm/validationSchema'
 import {version} from '../App/App'
 import {Form} from './form'
-import {validationRegisterSchema} from './validationRegisterSchema'
 
 class Register extends Component {
   submitForm = async (values, history) => {
