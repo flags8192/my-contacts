@@ -6,15 +6,21 @@ app.use(express.static(__dirname + '/uploaded'))
 
 require('./database')
 
-app.use(cors())
-app.use((request, response, next) => {
-  response.header('Access-Control-Allow-Origin', '*')
-  response.header(
-    'Access-Control-Allow-Headers',
-    'Origin, X-Requested-With, Content-Type, Accept'
-  )
-  next()
-})
+let corsOptions = {
+  origin: '*'
+}
+let helmet = require('helmet')
+
+app.use(cors(corsOptions))
+app.use(helmet.hidePoweredBy())
+// app.use((request, response, next) => {
+//   response.header('Access-Control-Allow-Origin', '*')
+//   response.header(
+//     'Access-Control-Allow-Headers',
+//     'Origin, X-Requested-With, Content-Type, Accept'
+//   )
+//   next()
+// })
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 app.get('/', function (request, response) {

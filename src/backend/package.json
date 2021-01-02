@@ -32,6 +32,7 @@
     "nodemon": "^2.0.6"
   },
   "devDependencies": {
+    "helmet": "^4.3.1",
     "jsonwebtoken": "^8.5.1"
   }
 }

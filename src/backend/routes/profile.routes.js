@@ -38,6 +38,7 @@ router.get('/id/:id', auth, async (request, response) => {
 router.put('/', auth, async (request, response) => {
   try {
     const form = new formidable.IncomingForm()
+    form.maxFileSize = 10000000 //10MB
     form.parse(request, async (error, fields, files) => {
       await Users.findOneAndUpdate({_id: fields.id}, fields)
       await uploadImage(files, fields)

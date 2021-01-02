@@ -105,8 +105,8 @@ const Contacts = () => {
   const classes = useToolbarStyles()
 
   const handleRowClick = async (currentRowsSelected, allRowsSelected, rowsSelected) => {
-    const rows = newContacts.map((contacts) => {
-      return ({_id: contacts[0], id: contacts[1] - 1})
+    const rows = newContacts.map((item) => {
+      return ({_id: item[0], id: item[1] - 1})
     })
     selected = rows.filter((element) => rowsSelected.includes(element.id)).map(element => element._id)
   }
@@ -193,9 +193,9 @@ const Contacts = () => {
     }
   }, [])
 
-  const deleteContacts = async (selected) => {
+  const deleteContacts = async (id) => {
     try {
-      await remove(`/api/contacts/${selected}`).then((response) => {
+      await remove(`/api/contacts/${id}`).then((response) => {
         if (response.data.result === 'success') {
           swal('Успешно!', response.data.message, 'success')
         } else if (response.data.result === 'error') {

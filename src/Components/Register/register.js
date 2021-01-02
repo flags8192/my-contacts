@@ -23,7 +23,7 @@ class Register extends Component {
             history.push('/login')
           })
         } else if (response.data.result === 'error') {
-          ;(async () => {
+          (async () => {
             await swal('Ошибка!', response.data.message, 'error')
           })()
         }

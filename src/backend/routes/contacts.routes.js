@@ -60,6 +60,7 @@ router.post('/add', auth, async (request, response) => {
 router.put('/', auth, async (request, response) => {
   try {
     const form = new formidable.IncomingForm()
+    form.maxFileSize = 10000000 //10MB
     form.parse(request, async (error, fields, files) => {
       await Contacts.findOneAndUpdate({_id: fields.id}, fields)
       await uploadImage(files, fields)
@@ -88,7 +89,7 @@ router.get('/:id', auth, async (request, response) => {
   }
 })
 
-router.delete('/:id', auth, async (request, response, next) => {
+router.delete('/:id', auth, async (request, response) => {
   const ids = request.params.id.split(',')
   try {
     await Contacts.deleteMany({
