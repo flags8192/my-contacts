@@ -1,26 +1,22 @@
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
-const cors = require('cors')
+
 app.use(express.static(__dirname + '/uploaded'))
 
 require('./database')
 
-let corsOptions = {
-  origin: '*'
-}
 let helmet = require('helmet')
 
-app.use(cors(corsOptions))
 app.use(helmet.hidePoweredBy())
-// app.use((request, response, next) => {
-//   response.header('Access-Control-Allow-Origin', '*')
-//   response.header(
-//     'Access-Control-Allow-Headers',
-//     'Origin, X-Requested-With, Content-Type, Accept'
-//   )
-//   next()
-// })
+app.use((request, response, next) => {
+  response.header('Access-Control-Allow-Origin', '*')
+  response.header(
+    'Access-Control-Allow-Headers',
+    'Origin, X-Requested-With, Content-Type, Accept'
+  )
+  next()
+})
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 app.get('/', function (request, response) {
