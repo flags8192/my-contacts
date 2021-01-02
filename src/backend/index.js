@@ -1,14 +1,12 @@
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
-
+const cors = require('cors')
 app.use(express.static(__dirname + '/uploaded'))
 
 require('./database')
 
-let helmet = require('helmet')
-
-app.use(helmet.hidePoweredBy())
+app.use(cors())
 app.use((request, response, next) => {
   response.header('Access-Control-Allow-Origin', '*')
   response.header(
