@@ -15,6 +15,7 @@ app.use((request, response, next) => {
   )
   next()
 })
+
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 app.get('/', function (request, response) {

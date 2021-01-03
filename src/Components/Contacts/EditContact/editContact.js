@@ -1,4 +1,4 @@
-import {Divider} from '@material-ui/core'
+import { Divider } from '@material-ui/core'
 import Avatar from '@material-ui/core/Avatar'
 import Button from '@material-ui/core/Button'
 import Card from '@material-ui/core/Card'
@@ -9,15 +9,15 @@ import CssBaseline from '@material-ui/core/CssBaseline'
 import FormGroup from '@material-ui/core/FormGroup'
 import Grid from '@material-ui/core/Grid'
 import Input from '@material-ui/core/Input'
-import {withStyles} from '@material-ui/core/styles'
+import { withStyles } from '@material-ui/core/styles'
 import TextField from '@material-ui/core/TextField'
-import {Formik} from 'formik'
-import React, {Component} from 'react'
+import { Formik } from 'formik'
+import React, { Component } from 'react'
 import swal from 'sweetalert'
-import {get, put} from '../../../api/request'
+import { get, put } from '../../../api/request'
 import userAvatarDefault from '../../../Images/user.png'
-import {StylesEditContact} from '../../../Style/styleEditContact'
-import {validationContactSchema} from '../../../ValidateForm/validationSchema'
+import { StylesEditContact } from '../../../Style/styleEditContact'
+import { validationContactSchema } from '../../../ValidateForm/validationSchema'
 import Loading from '../../Loading'
 
 class EditContact extends Component {
@@ -116,7 +116,7 @@ class EditContact extends Component {
               }}
               name="avatars"
               value=""
-              inputProps={{accept: ['image/jpg', 'image/jpeg', 'image/png', 'image/gif']}}
+              inputProps={{ accept: 'image/jpg, image/jpeg, image/png, image/gif' }}
               id="avatars"
               error={errors.avatars}
             />
