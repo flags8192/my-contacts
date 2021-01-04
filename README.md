@@ -8,14 +8,14 @@ Thank you for having interest in this repository!
 To use this application,\
 first create rsa keys (private.key, public.key) and copy them to `src/backend/keys`
 
-````
-# openssl genrsa -out private.key -aes256 4096
-# openssl rsa -pubout -in private.key -out public.key
-````
+```bash
+openssl genrsa -out private.key -aes256 4096
+openssl rsa -pubout -in private.key -out public.key
+```
 
 Then fill in the file `src/backend/.env` with the required information
 
-````
+```bash
 # Example
 key_pass_phrase = "ICAKBgQCFPCqJYj20UY4BGfdss44rsw"
 issuer = "Alexander Listratenkov"
@@ -23,7 +23,7 @@ subject = "mail@listratenkov.com"
 audience = "https://listratenkov.com"
 
 MONGODB_URI = "mongodb://server.flags8192.local/my-contacts"
-````
+```
 
 Type `npm install` inside the root directory ( Download Front-end Dependencies )\
 Type `npm install` inside `src\backend` server directory ( Download Server Dependencies )
