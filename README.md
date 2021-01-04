@@ -1,5 +1,7 @@
 # Getting Started
 
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/fb97c9e747bd47f794ec2106d99c08b8)](https://www.codacy.com/gh/flags8192/my-contacts/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=flags8192/my-contacts&amp;utm_campaign=Badge_Grade)
+
 Hello, My Friends
 Thank you for having interest in this repository!
 
