@@ -1,9 +1,15 @@
-import {createMuiTheme} from '@material-ui/core/styles'
+import { createMuiTheme } from '@material-ui/core/styles';
 
 const theme = createMuiTheme({
   palette: {
-    common: {black: '#000', white: '#fff'},
-    background: {paper: '#fff', default: '#fafafa'},
+    common: {
+      black: '#000',
+      white: '#fff',
+    },
+    background: {
+      paper: '#fff',
+      default: '#fafafa',
+    },
     primary: {
       light: 'rgba(171, 193, 255, 100)',
       main: 'rgba(0, 85, 165, 100)',
@@ -29,5 +35,5 @@ const theme = createMuiTheme({
       hint: 'rgba(0, 0, 0, 0.38)',
     },
   },
-})
-export default theme
+});
+export default theme;

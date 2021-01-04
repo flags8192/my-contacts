@@ -51,4 +51,4 @@ export const StylesAddContact = (theme) => ({
   submit: {
     margin: theme.spacing(3, 0, 2),
   },
-})
+});

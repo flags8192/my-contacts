@@ -24,13 +24,15 @@
     "axios": "^0.21.1",
     "formik": "^2.2.6",
     "mui-datatables": "^3.7.3",
+    "prop-types": "^15.7.2",
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
     "sweetalert": "^2.1.2",
     "web-vitals": "^1.0.1",
-    "yup": "^0.32.8"
+    "yup": "^0.32.8",
+    "clsx": "^1.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -53,22 +55,14 @@
     ]
   },
   "devDependencies": {
-    "clsx": "^1.1.1",
+    "babel-eslint": "^10.1.0",
     "concurrently": "^5.3.0",
-    "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.5"
-  },
-  "eslintConfig": {
-    "env": {
-      "es6": true
-    },
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ],
-    "parserOptions": {
-      "ecmaVersion": 6,
-      "sourceType": "module"
-    }
+    "eslint": "^7.17.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-babel": "^5.3.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react-hooks": "^4.2.0"
   }
 }

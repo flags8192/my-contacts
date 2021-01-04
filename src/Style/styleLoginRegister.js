@@ -1,4 +1,4 @@
-import Logo from '../Images/logo.png'
+import Logo from '../Images/logo.png';
 
 export const StylesLoginRegister = (theme) => ({
   root: {
@@ -28,4 +28,4 @@ export const StylesLoginRegister = (theme) => ({
     width: '100%', // Fix IE 11 issue.
     marginTop: theme.spacing(1),
   },
-})
+});

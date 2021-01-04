@@ -1,28 +1,26 @@
-import axios from 'axios'
-import swal from 'sweetalert'
+import axios from 'axios';
+import swal from 'sweetalert';
 
 function request(method, url, parameters, data) {
-  let axios_config = {
+  const axiosConfig = {
     baseURL: 'http://127.0.0.1:5000/',
     method,
     url,
     headers: {
-      Authorization: 'Bearer ' + localStorage.getItem('TOKEN_KEY'),
+      Authorization: `Bearer ${localStorage.getItem('TOKEN_KEY')}`,
     },
-  }
+  };
 
   if (parameters) {
-    axios_config.params = parameters
+    axiosConfig.params = parameters;
   }
 
   if (data) {
-    axios_config.data = data
+    axiosConfig.data = data;
   }
 
   axios.interceptors.response.use(
-    (response) => {
-      return response
-    },
+    (response) => response,
     (error) => {
       if (error.response.status === 401) {
         swal({
@@ -32,37 +30,41 @@ function request(method, url, parameters, data) {
           type: 'warning',
           icon: 'warning',
           buttons: {
-            confirm: {text: 'Ok', className: 'sweet-warning-button'},
+            confirm: {
+              text: 'Ok',
+              className: 'sweet-warning-button',
+            },
           },
           confirmButtonColor: '#000',
 
           closeOnClickOutside: false,
-        }).then(() => {
-          localStorage.removeItem('TOKEN_KEY')
-          window.location = '/login'
         })
+          .then(() => {
+            localStorage.removeItem('TOKEN_KEY');
+            window.location = '/login';
+          });
       }
-      return Promise.reject(error)
-    }
-  )
+      return Promise.reject(error);
+    },
+  );
 
-  return axios(axios_config)
+  return axios(axiosConfig);
 }
 
 export function get(url) {
-  return request('get', url)
+  return request('get', url);
 }
 
 export function post(url, data) {
-  data = data || {}
-  return request('post', url, null, data)
+  const postData = data || {};
+  return request('post', url, null, postData);
 }
 
 export function put(url, data) {
-  data = data || {}
-  return request('put', url, null, data)
+  const putData = data || {};
+  return request('put', url, null, putData);
 }
 
 export function remove(url) {
-  return request('delete', url)
+  return request('delete', url);
 }

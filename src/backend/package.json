@@ -29,10 +29,10 @@
     "formidable": "^1.2.2",
     "fs-extra": "^9.0.1",
     "mongoose": "^5.11.8",
-    "nodemon": "^2.0.6"
+    "nodemon": "^2.0.6",
+    "jsonwebtoken": "^8.5.1"
   },
   "devDependencies": {
-    "helmet": "^4.3.1",
-    "jsonwebtoken": "^8.5.1"
+    "helmet": "^4.3.1"
   }
 }

@@ -1,28 +1,30 @@
-import Box from '@material-ui/core/Box'
-import Button from '@material-ui/core/Button'
-import Grid from '@material-ui/core/Grid'
-import InputAdornment from '@material-ui/core/InputAdornment'
-import Link from '@material-ui/core/Link'
-import TextField from '@material-ui/core/TextField'
-import {Lock, Person} from '@material-ui/icons'
-import EmailIcon from '@material-ui/icons/Email'
-import React from 'react'
-import {Link as RouterLink} from 'react-router-dom'
-import Copyright from '../Copyright'
-
-const LinkLogin = React.forwardRef((properties, reference) => (
-  <RouterLink ref={reference} to='/login' {...properties} />
-))
+import Box from '@material-ui/core/Box';
+import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import Link from '@material-ui/core/Link';
+import TextField from '@material-ui/core/TextField';
+import { Lock, Person } from '@material-ui/icons';
+import EmailIcon from '@material-ui/icons/Email';
+import React from 'react';
+import Copyright from '../Copyright';
+import { Links } from '../Links/links';
 
 export const Form = (properties) => {
   const {
-    values: {firstName, lastName, email, password, confirm_password},
+    values: {
+      firstName,
+      lastName,
+      email,
+      password,
+      confirmPassword,
+    },
     errors,
     touched,
     handleSubmit,
     handleChange,
     isValid,
-  } = properties
+  } = properties;
 
   return (
     <form onSubmit={handleSubmit}>
@@ -30,19 +32,19 @@ export const Form = (properties) => {
         <Grid item xs={12} sm={6}>
           <TextField
             autoFocus
-            variant='outlined'
-            margin='normal'
-            name='firstName'
+            variant="outlined"
+            margin="normal"
+            name="firstName"
             helperText={touched.firstName ? errors.firstName : ''}
             error={Boolean(errors.firstName)}
-            label='Имя'
+            label="Имя"
             fullWidth
             value={firstName}
             onChange={handleChange}
             InputProps={{
               startAdornment: (
-                <InputAdornment position='start'>
-                  <Person/>
+                <InputAdornment position="start">
+                  <Person />
                 </InputAdornment>
               ),
             }}
@@ -50,19 +52,19 @@ export const Form = (properties) => {
         </Grid>
         <Grid item xs={12} sm={6}>
           <TextField
-            variant='outlined'
-            margin='normal'
-            name='lastName'
+            variant="outlined"
+            margin="normal"
+            name="lastName"
             helperText={touched.lastName ? errors.lastName : ''}
             error={Boolean(errors.lastName)}
-            label='Фамилия'
+            label="Фамилия"
             fullWidth
             value={lastName}
             onChange={handleChange}
             InputProps={{
               startAdornment: (
-                <InputAdornment position='start'>
-                  <Person/>
+                <InputAdornment position="start">
+                  <Person />
                 </InputAdornment>
               ),
             }}
@@ -70,19 +72,19 @@ export const Form = (properties) => {
         </Grid>
         <Grid item xs={12}>
           <TextField
-            variant='outlined'
-            margin='normal'
-            name='email'
+            variant="outlined"
+            margin="normal"
+            name="email"
             helperText={touched.email ? errors.email : ''}
             error={Boolean(errors.email)}
-            label='Email адрес'
+            label="Email адрес"
             fullWidth
             value={email}
             onChange={handleChange}
             InputProps={{
               startAdornment: (
-                <InputAdornment position='start'>
-                  <EmailIcon/>
+                <InputAdornment position="start">
+                  <EmailIcon />
                 </InputAdornment>
               ),
             }}
@@ -90,20 +92,20 @@ export const Form = (properties) => {
         </Grid>
         <Grid item xs={12} sm={6}>
           <TextField
-            variant='outlined'
-            margin='normal'
-            name='password'
-            type='password'
+            variant="outlined"
+            margin="normal"
+            name="password"
+            type="password"
             helperText={touched.password ? errors.password : ''}
             error={Boolean(errors.password)}
-            label='Пароль'
+            label="Пароль"
             fullWidth
             value={password}
             onChange={handleChange}
             InputProps={{
               startAdornment: (
-                <InputAdornment position='start'>
-                  <Lock/>
+                <InputAdornment position="start">
+                  <Lock />
                 </InputAdornment>
               ),
             }}
@@ -111,20 +113,20 @@ export const Form = (properties) => {
         </Grid>
         <Grid item xs={12} sm={6}>
           <TextField
-            variant='outlined'
-            margin='normal'
-            name='confirm_password'
-            type='password'
-            helperText={touched.confirm_password ? errors.confirm_password : ''}
-            error={Boolean(errors.confirm_password)}
-            label='Повторите пароль'
+            variant="outlined"
+            margin="normal"
+            name="confirmPassword"
+            type="password"
+            helperText={touched.confirmPassword ? errors.confirmPassword : ''}
+            error={Boolean(errors.confirmPassword)}
+            label="Повторите пароль"
             fullWidth
-            value={confirm_password}
+            value={confirmPassword}
             onChange={handleChange}
             InputProps={{
               startAdornment: (
-                <InputAdornment position='start'>
-                  <Lock/>
+                <InputAdornment position="start">
+                  <Lock />
                 </InputAdornment>
               ),
             }}
@@ -133,27 +135,27 @@ export const Form = (properties) => {
       </Grid>
       <Box mt={2}>
         <Button
-          type='submit'
+          type="submit"
           fullWidth
-          variant='contained'
-          color='primary'
+          variant="contained"
+          color="primary"
           disabled={!isValid}
         >
           Зарегистрироваться
         </Button>
       </Box>
-      <Grid container justify='flex-end'>
+      <Grid container justify="flex-end">
         <Grid item>
           <Box mt={2}>
-            <Link component={LinkLogin} variant='body2'>
+            <Link component={Links} to="/login" variant="body2">
               Уже зарегистрированы? Войти
             </Link>
           </Box>
         </Grid>
       </Grid>
       <Box mt={5}>
-        <Copyright/>
+        <Copyright />
       </Box>
     </form>
-  )
-}
+  );
+};

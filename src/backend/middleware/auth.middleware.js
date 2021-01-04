@@ -1,37 +1,40 @@
-const jwt = require('../jwt')
+const jwt = require('../jwt');
 
-const errorMessage = 'Нет авторизации'
+const errorMessage = 'Нет авторизации';
 
 module.exports = (request, response, next) => {
-  let token = ''
+  let token;
   if (request === 'OPTIONS') {
-    return next()
+    return next();
+  }
+  if (request.headers.authorization && request.headers.authorization.split(' ')[0] === 'Bearer') {
+    [, token] = request.headers.authorization.split(' ');
   }
   try {
-    if (request.headers.authorization) {
-      token = request.headers.authorization.split(' ')[1] // "Bearer TOKEN"
-    }
     if (!token) {
-      return response.status(401).json({
-        status: 401,
-        error: errorMessage,
-        description: 'Нет токена',
-      })
+      return response.status(401)
+        .json({
+          status: 401,
+          error: errorMessage,
+          description: 'Нет токена',
+        });
     }
-    request.user = jwt.verify(token)
+    request.user = jwt.verify(token);
     if (request.user === false) {
-      return response.status(401).json({
+      return response.status(401)
+        .json({
+          status: 401,
+          error: errorMessage,
+          description: 'Невалидный токен',
+        });
+    }
+    next();
+  } catch (error) {
+    response.status(401)
+      .json({
         status: 401,
         error: errorMessage,
-        description: 'Невалидный токен',
-      })
-    }
-    next()
-  } catch (error) {
-    response.status(401).json({
-      status: 401,
-      error: errorMessage,
-      description: error.message,
-    })
+        description: error.message,
+      });
   }
-}
+};

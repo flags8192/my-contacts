@@ -59,4 +59,4 @@ export const StylesProfile = (theme) => ({
   submit: {
     margin: theme.spacing(3, 0, 2),
   },
-})
+});

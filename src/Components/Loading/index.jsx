@@ -1,5 +1,5 @@
-import CircularProgress from '@material-ui/core/CircularProgress'
-import React from 'react'
+import CircularProgress from '@material-ui/core/CircularProgress';
+import React from 'react';
 
 export default function Loading() {
   return (
@@ -15,7 +15,7 @@ export default function Loading() {
         alignItems: 'center',
       }}
     >
-      <CircularProgress size={50}/>
+      <CircularProgress size={50} />
     </div>
-  )
+  );
 }

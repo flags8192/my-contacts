@@ -1,4 +1,4 @@
-import {makeStyles} from '@material-ui/core/styles'
+import { makeStyles } from '@material-ui/core/styles';
 
 export const useStylesHome = makeStyles((theme) => ({
   root: {
@@ -15,4 +15,4 @@ export const useStylesHome = makeStyles((theme) => ({
     overflow: 'auto',
     flexDirection: 'column',
   },
-}))
+}));

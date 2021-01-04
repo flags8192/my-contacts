@@ -1,6 +1,6 @@
-import {makeStyles} from '@material-ui/core/styles'
+import { makeStyles } from '@material-ui/core/styles';
 
-const drawerWidth = 240
+const drawerWidth = 240;
 
 export const useStylesDashboard = makeStyles((theme) => ({
   root: {
@@ -89,4 +89,4 @@ export const useStylesDashboard = makeStyles((theme) => ({
     border: '1px solid white',
     backgroundColor: 'white',
   },
-}))
+}));
