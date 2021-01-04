@@ -32,6 +32,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -45,10 +46,11 @@
   background-color: rgba(0, 85, 165, 100);
 }
 
+.swal-button {
+  background-color: rgba(0, 85, 165, 100);
+}
+
 .swal-button:not([disabled]):hover {
   background-color: rgba(18, 40, 230, 100);
 }
 
-.swal-button {
-  background-color: rgba(0, 85, 165, 100);
-}
